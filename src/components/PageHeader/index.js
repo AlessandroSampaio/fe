@@ -1,5 +1,4 @@
 import { Link } from 'react-router-dom';
-// eslint-disable-next-line import/no-extraneous-dependencies
 import PropTypes from 'prop-types';
 import { Container } from './styles';
 import arrow from '../../assets/images/icons/arrow.svg';
