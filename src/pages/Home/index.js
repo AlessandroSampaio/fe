@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import {
   Card,
   Container, Header, ListContainer, InputSearchContainer,
@@ -16,7 +17,7 @@ export default function Home() {
         <strong>
           3 Contatos
         </strong>
-        <a href="/">Novo Contato</a>
+        <Link to="/new">Novo Contato</Link>
       </Header>
       <ListContainer>
         <header>
@@ -36,47 +37,9 @@ export default function Home() {
           </div>
 
           <div className="actions">
-            <a href="/">
+            <Link to="/edit/123">
               <img src={edit} alt="edit" />
-            </a>
-            <button type="button">
-              <img src={trash} alt="delete" />
-            </button>
-          </div>
-        </Card>
-        <Card>
-          <div className="info">
-            <div className="contact-name">
-              <strong>Name</strong>
-              <small>instagram</small>
-            </div>
-            <span>email</span>
-            <span>telefone</span>
-          </div>
-
-          <div className="actions">
-            <a href="/">
-              <img src={edit} alt="edit" />
-            </a>
-            <button type="button">
-              <img src={trash} alt="delete" />
-            </button>
-          </div>
-        </Card>
-        <Card>
-          <div className="info">
-            <div className="contact-name">
-              <strong>Name</strong>
-              <small>instagram</small>
-            </div>
-            <span>email</span>
-            <span>telefone</span>
-          </div>
-
-          <div className="actions">
-            <a href="/">
-              <img src={edit} alt="edit" />
-            </a>
+            </Link>
             <button type="button">
               <img src={trash} alt="delete" />
             </button>
