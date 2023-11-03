@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const Overlay = styled.div`
-    background: rgba(0,0,0, 0.6);
+    background: rgba(0, 0, 0, 0.6);
     backdrop-filter: blur(4px);
     position: absolute;
     width: 100%;
@@ -23,6 +23,7 @@ export const Container = styled.div`
 
     h1 {
         font-size: 22px;
+        color: ${({ theme, danger }) => (danger ? theme.colors.danger.main : theme.colors.gray[900])};
     }
 
     p {
@@ -41,6 +42,6 @@ export const Footer = styled.footer`
         border: none;
         font-size: 16px;
         margin-right: 8px;
-        color: ${({ theme }) => theme.colors.gray[200]}
+        color: ${({ theme }) => theme.colors.gray[200]};
     }
 `;
