@@ -15,7 +15,11 @@ export default function ContactForm({ buttonLabel }) {
   const [phone, setPhone] = useState('');
   const [category, setCategory] = useState('');
 
-  const { setError, removeError, getErrorMessageByFieldName } = useErrors();
+  const {
+    setError, removeError, getErrorMessageByFieldName, errors,
+  } = useErrors();
+
+  const isFormValid = (name && errors.length === 0);
 
   function handleNameChange(event) {
     setName(event.target.value);
@@ -51,7 +55,7 @@ export default function ContactForm({ buttonLabel }) {
         <Input
           value={name}
           type="text"
-          placeholder="Nome"
+          placeholder="Nome *"
           onChange={(event) => handleNameChange(event)}
           error={getErrorMessageByFieldName('name')}
         />
@@ -86,7 +90,7 @@ export default function ContactForm({ buttonLabel }) {
       </FormGroup>
 
       <ButtonContainer>
-        <Button type="submit">{buttonLabel}</Button>
+        <Button type="submit" disabled={!isFormValid}>{buttonLabel}</Button>
       </ButtonContainer>
     </Form>
   );
