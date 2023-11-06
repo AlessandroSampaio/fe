@@ -7,6 +7,7 @@ import Select from '../Select';
 import Button from '../Button';
 import isEmailValid from '../../utils/isEmailValid';
 import useErrors from '../../hooks/useErrors';
+import formatPhone from '../../utils/formatPhone';
 
 export default function ContactForm({ buttonLabel }) {
   const [name, setName] = useState('');
@@ -36,6 +37,10 @@ export default function ContactForm({ buttonLabel }) {
     }
   }
 
+  function handlePhoneChage(event) {
+    setPhone(formatPhone(event.target.value));
+  }
+
   function handleSubmit(event) {
     event.preventDefault();
   }
@@ -63,9 +68,10 @@ export default function ContactForm({ buttonLabel }) {
       <FormGroup>
         <Input
           value={phone}
-          type="number"
+          type="text"
           placeholder="Telefone"
-          onChange={(event) => setPhone(event.target.value)}
+          onChange={(event) => handlePhoneChage(event)}
+          maxLength="15"
         />
       </FormGroup>
       <FormGroup>
